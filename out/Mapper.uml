@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Mapper</OriginalElement>
+  <nodes>
+    <node x="2092.3294231742275" y="836.0">ResourceInfo</node>
+    <node x="736.0388584359362" y="0.0">java.rmi.Remote</node>
+    <node x="1995.8294231742273" y="346.0">java.rmi.server.RemoteServer</node>
+    <node x="1922.1627565075607" y="100.0">java.rmi.server.RemoteObject</node>
+    <node x="0.0" y="1036.0">MasterInterface</node>
+    <node x="416.5686006634048" y="1025.0">ObjectRegistryInterface</node>
+    <node x="516.6110291223927" y="1754.0">RMIMaster</node>
+    <node x="2127.5794231742275" y="0.0">java.io.Serializable</node>
+    <node x="646.0276957890593" y="1490.0">Master</node>
+    <node x="1328.091327936132" y="926.0">StorageInterface</node>
+    <node x="1064.091327936132" y="1025.0">MapperInterface</node>
+    <node x="1590.591327936132" y="1479.0">Mapper</node>
+    <node x="1540.841327936132" y="1754.0">RMIMapper</node>
+    <node x="1954.1294231742272" y="1380.0">Storage</node>
+    <node x="684.9663279361321" y="1025.0">ReducerInterface</node>
+    <node x="1977.3794231742272" y="1754.0">RMIStorage</node>
+    <node x="1007.0357142857142" y="504.0">java.rmi.server.UnicastRemoteObject</node>
+    <node x="183.5" y="1754.0">RMIRegistry</node>
+    <node x="920.2526957890593" y="1479.0">Reducer</node>
+    <node x="758.5496612694654" y="1878.0">RMIClient</node>
+    <node x="154.5" y="1479.0">ObjectRegistry</node>
+    <node x="893.3413279361321" y="1754.0">RMIReducer</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.rmi.server.UnicastRemoteObject" target="java.rmi.server.UnicastRemoteObject">
+      <point x="-253.28571428571428" y="126.0" />
+      <point x="1049.25" y="776.0" />
+      <point x="987.0357142857142" y="776.0" />
+      <point x="987.0357142857142" y="630.0" />
+      <point x="-295.5" y="-0.0" />
+    </edge>
+    <edge source="Storage" target="StorageInterface">
+      <point x="-187.19999999999982" y="-137.0" />
+      <point x="2000.9294231742274" y="1330.0" />
+      <point x="1766.841327936132" y="1330.0" />
+      <point x="204.75" y="137.0" />
+    </edge>
+    <edge source="Master" target="ReducerInterface">
+      <point x="0.0" y="-27.0" />
+      <point x="744.0276957890593" y="1290.0" />
+      <point x="770.2163279361321" y="1290.0" />
+      <point x="-85.25" y="38.0" />
+    </edge>
+    <edge source="RMIClient" target="RMIMapper">
+      <point x="46.875" y="-38.0" />
+      <point x="880.4246612694654" y="1848.0" />
+      <point x="1615.841327936132" y="1848.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="RMIMaster" target="Master">
+      <point x="0.0" y="-27.0" />
+      <point x="591.6110291223927" y="1724.0" />
+      <point x="678.6943624557259" y="1724.0" />
+      <point x="-65.33333333333337" y="27.0" />
+    </edge>
+    <edge source="java.rmi.server.RemoteObject" target="java.io.Serializable">
+      <point x="85.33333333333326" y="-93.0" />
+      <point x="2135.496089840894" y="80.0" />
+      <point x="2151.5794231742275" y="80.0" />
+      <point x="-48.0" y="15.0" />
+    </edge>
+    <edge source="RMIReducer" target="Reducer">
+      <point x="0.0" y="-27.0" />
+      <point x="968.3413279361321" y="1734.0" />
+      <point x="1005.5026957890593" y="1734.0" />
+      <point x="-85.25" y="38.0" />
+    </edge>
+    <edge source="Storage" target="ResourceInfo">
+      <point x="0.0" y="-137.0" />
+      <point x="2188.129423174227" y="1350.0" />
+      <point x="2276.8821231798493" y="1350.0" />
+      <point x="2276.8821231798493" y="906.0" />
+      <point x="2193.1294231742277" y="906.0" />
+      <point x="28.800000000000182" y="15.0" />
+    </edge>
+    <edge source="ResourceInfo" target="java.rmi.server.UnicastRemoteObject">
+      <point x="-36.0" y="-15.0" />
+      <point x="2128.3294231742275" y="796.0" />
+      <point x="1555.8214285714284" y="796.0" />
+      <point x="253.28571428571422" y="126.0" />
+    </edge>
+    <edge source="java.rmi.server.UnicastRemoteObject" target="java.rmi.server.RemoteServer">
+      <point x="147.75" y="-126.0" />
+      <point x="1450.2857142857142" y="484.0" />
+      <point x="2141.3294231742275" y="484.0" />
+      <point x="48.5" y="49.0" />
+    </edge>
+    <edge source="RMIStorage" target="ObjectRegistryInterface">
+      <point x="-18.75" y="-27.0" />
+      <point x="2033.6294231742272" y="1674.0" />
+      <point x="852.5276957890593" y="1674.0" />
+      <point x="852.5276957890593" y="1280.0" />
+      <point x="574.750418845223" y="1280.0" />
+      <point x="42.18181818181813" y="38.0" />
+    </edge>
+    <edge source="RMIClient" target="MasterInterface">
+      <point x="-65.625" y="-38.0" />
+      <point x="767.9246612694654" y="1858.0" />
+      <point x="49.00000000000023" y="1858.0" />
+      <point x="-49.0" y="27.0" />
+    </edge>
+    <edge source="RMIRegistry" target="ObjectRegistry">
+      <point x="-37.5" y="-27.0" />
+      <point x="221.0" y="1734.0" />
+      <point x="206.5" y="1734.0" />
+      <point x="-52.0" y="38.0" />
+    </edge>
+    <edge source="RMIMapper" target="Mapper">
+      <point x="18.75" y="-27.0" />
+      <point x="1634.591327936132" y="1734.0" />
+      <point x="1651.591327936132" y="1734.0" />
+      <point x="-61.0" y="38.0" />
+    </edge>
+    <edge source="java.rmi.server.RemoteObject" target="java.rmi.server.RemoteObject">
+      <point x="-85.33333333333337" y="93.0" />
+      <point x="1964.8294231742275" y="306.0" />
+      <point x="1902.1627565075607" y="306.0" />
+      <point x="1902.1627565075607" y="193.0" />
+      <point x="-128.0" y="-0.0" />
+    </edge>
+    <edge source="Master" target="ObjectRegistryInterface">
+      <point x="-56.0" y="-27.0" />
+      <point x="688.0276957890593" y="1320.0" />
+      <point x="532.5686006634048" y="1320.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="Mapper" target="MapperInterface">
+      <point x="-45.75" y="-38.0" />
+      <point x="1666.841327936132" y="1230.0" />
+      <point x="1247.091327936132" y="1230.0" />
+      <point x="61.0" y="38.0" />
+    </edge>
+    <edge source="Master" target="MasterInterface">
+      <point x="-84.0" y="-27.0" />
+      <point x="660.0276957890593" y="1330.0" />
+      <point x="147.0" y="1330.0" />
+      <point x="49.0" y="27.0" />
+    </edge>
+    <edge source="RMIClient" target="StorageInterface">
+      <point x="28.125" y="-38.0" />
+      <point x="861.6746612694654" y="1838.0" />
+      <point x="1412.313632147073" y="1838.0" />
+      <point x="1412.313632147073" y="1350.0" />
+      <point x="1532.841327936132" y="1350.0" />
+      <point x="-29.25" y="137.0" />
+    </edge>
+    <edge source="RMIClient" target="RMIMaster">
+      <point x="-9.375" y="-38.0" />
+      <point x="824.1746612694654" y="1828.0" />
+      <point x="591.6110291223927" y="1828.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="Mapper" target="java.rmi.server.UnicastRemoteObject">
+      <point x="45.75" y="-38.0" />
+      <point x="1758.341327936132" y="1340.0" />
+      <point x="1806.591327936132" y="1340.0" />
+      <point x="1806.591327936132" y="816.0" />
+      <point x="1386.9642857142858" y="816.0" />
+      <point x="84.42857142857156" y="126.0" />
+    </edge>
+    <edge source="RMIClient" target="ObjectRegistryInterface">
+      <point x="-46.875" y="-38.0" />
+      <point x="786.6746612694654" y="1848.0" />
+      <point x="103.48787457131516" y="1848.0" />
+      <point x="103.48787457131516" y="1350.0" />
+      <point x="427.1140552088593" y="1350.0" />
+      <point x="-105.4545454545455" y="38.0" />
+    </edge>
+    <edge source="Master" target="MapperInterface">
+      <point x="56.0" y="-27.0" />
+      <point x="800.0276957890593" y="1310.0" />
+      <point x="1125.091327936132" y="1310.0" />
+      <point x="-61.0" y="38.0" />
+    </edge>
+    <edge source="RMIClient" target="RMIReducer">
+      <point x="9.375" y="-38.0" />
+      <point x="842.9246612694654" y="1828.0" />
+      <point x="968.3413279361321" y="1828.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="java.rmi.server.RemoteServer" target="java.rmi.server.RemoteObject">
+      <point x="-48.5" y="-49.0" />
+      <point x="2044.3294231742273" y="326.0" />
+      <point x="2050.1627565075605" y="326.0" />
+      <point x="0.0" y="93.0" />
+    </edge>
+    <edge source="RMIStorage" target="Storage">
+      <point x="18.75" y="-27.0" />
+      <point x="-117.0" y="137.0" />
+    </edge>
+    <edge source="RMIMaster" target="ObjectRegistryInterface">
+      <point x="-50.0" y="-27.0" />
+      <point x="541.6110291223927" y="1734.0" />
+      <point x="534.0276957890593" y="1734.0" />
+      <point x="534.0276957890593" y="1360.0" />
+      <point x="469.29587339067757" y="1360.0" />
+      <point x="-63.27272727272725" y="38.0" />
+    </edge>
+    <edge source="Mapper" target="ResourceInfo">
+      <point x="76.25" y="-38.0" />
+      <point x="1788.841327936132" y="1350.0" />
+      <point x="2063.2746809467585" y="1350.0" />
+      <point x="2063.2746809467585" y="906.0" />
+      <point x="2135.5294231742273" y="906.0" />
+      <point x="-28.800000000000182" y="15.0" />
+    </edge>
+    <edge source="java.rmi.server.RemoteServer" target="java.rmi.server.RemoteServer">
+      <point x="-48.5" y="49.0" />
+      <point x="2044.3294231742273" y="464.0" />
+      <point x="1975.8294231742273" y="464.0" />
+      <point x="1975.8294231742273" y="395.0" />
+      <point x="-97.0" y="-0.0" />
+    </edge>
+    <edge source="RMIMapper" target="ObjectRegistryInterface">
+      <point x="-56.25" y="-27.0" />
+      <point x="1559.591327936132" y="1704.0" />
+      <point x="635.5276957890593" y="1704.0" />
+      <point x="635.5276957890593" y="1340.0" />
+      <point x="511.4776915724957" y="1340.0" />
+      <point x="-21.090909090909122" y="38.0" />
+    </edge>
+    <edge source="Storage" target="java.io.Serializable">
+      <point x="187.19999999999982" y="-137.0" />
+      <point x="2375.329423174227" y="1360.0" />
+      <point x="2330.58212317985" y="1360.0" />
+      <point x="2330.58212317985" y="80.0" />
+      <point x="2247.5794231742275" y="80.0" />
+      <point x="48.0" y="15.0" />
+    </edge>
+    <edge source="RMIMapper" target="StorageInterface">
+      <point x="-18.75" y="-27.0" />
+      <point x="1597.091327936132" y="1694.0" />
+      <point x="1444.2190279417543" y="1694.0" />
+      <point x="1444.2190279417543" y="1360.0" />
+      <point x="1591.341327936132" y="1360.0" />
+      <point x="29.25" y="137.0" />
+    </edge>
+    <edge source="Mapper" target="ObjectRegistryInterface">
+      <point x="-106.75" y="-38.0" />
+      <point x="1605.841327936132" y="1250.0" />
+      <point x="616.9322370270412" y="1250.0" />
+      <point x="84.36363636363637" y="38.0" />
+    </edge>
+    <edge source="ObjectRegistry" target="java.rmi.server.UnicastRemoteObject">
+      <point x="-52.0" y="-38.0" />
+      <point x="206.5" y="796.0" />
+      <point x="1133.6785714285713" y="796.0" />
+      <point x="-168.8571428571429" y="126.0" />
+    </edge>
+    <edge source="StorageInterface" target="ResourceInfo">
+      <point x="117.0" y="-137.0" />
+      <point x="1679.091327936132" y="896.0" />
+      <point x="2106.729423174227" y="896.0" />
+      <point x="-57.59999999999991" y="15.0" />
+    </edge>
+    <edge source="ObjectRegistryInterface" target="java.rmi.Remote">
+      <point x="0.0" y="-38.0" />
+      <point x="532.5686006634048" y="906.0" />
+      <point x="141.25" y="906.0" />
+      <point x="141.25" y="60.0" />
+      <point x="754.0388584359362" y="60.0" />
+      <point x="-30.0" y="15.0" />
+    </edge>
+    <edge source="Master" target="java.rmi.server.UnicastRemoteObject">
+      <point x="28.0" y="-27.0" />
+      <point x="772.0276957890593" y="1300.0" />
+      <point x="1036.466327936132" y="1300.0" />
+      <point x="1036.466327936132" y="806.0" />
+      <point x="1218.107142857143" y="806.0" />
+      <point x="-84.42857142857133" y="126.0" />
+    </edge>
+    <edge source="Mapper" target="StorageInterface">
+      <point x="-15.25" y="-38.0" />
+      <point x="1697.341327936132" y="1220.0" />
+      <point x="1649.841327936132" y="1220.0" />
+      <point x="87.75" y="137.0" />
+    </edge>
+    <edge source="Reducer" target="ReducerInterface">
+      <point x="-68.20000000000005" y="-38.0" />
+      <point x="1022.5526957890593" y="1260.0" />
+      <point x="940.7163279361323" y="1260.0" />
+      <point x="85.25000000000011" y="38.0" />
+    </edge>
+    <edge source="StorageInterface" target="java.rmi.Remote">
+      <point x="-117.0" y="-137.0" />
+      <point x="1445.091327936132" y="886.0" />
+      <point x="1891.6627565075607" y="886.0" />
+      <point x="1891.6627565075607" y="70.0" />
+      <point x="802.0388584359362" y="70.0" />
+      <point x="18.0" y="15.0" />
+    </edge>
+    <edge source="java.rmi.server.RemoteObject" target="java.rmi.Remote">
+      <point x="-2.2737367544323206E-13" y="-93.0" />
+      <point x="2050.1627565075605" y="50.0" />
+      <point x="826.0388584359362" y="50.0" />
+      <point x="42.0" y="15.0" />
+    </edge>
+    <edge source="RMIReducer" target="ObjectRegistryInterface">
+      <point x="-50.0" y="-27.0" />
+      <point x="918.3413279361321" y="1714.0" />
+      <point x="624.5276957890593" y="1714.0" />
+      <point x="624.5276957890593" y="1350.0" />
+      <point x="490.3867824815867" y="1350.0" />
+      <point x="-42.18181818181813" y="38.0" />
+    </edge>
+    <edge source="ReducerInterface" target="java.rmi.Remote">
+      <point x="1.1368683772161603E-13" y="-38.0" />
+      <point x="855.4663279361323" y="896.0" />
+      <point x="152.25" y="896.0" />
+      <point x="152.25" y="70.0" />
+      <point x="766.0388584359362" y="70.0" />
+      <point x="-18.0" y="15.0" />
+    </edge>
+    <edge source="Reducer" target="StorageInterface">
+      <point x="68.20000000000005" y="-38.0" />
+      <point x="1158.9526957890594" y="1330.0" />
+      <point x="1415.841327936132" y="1330.0" />
+      <point x="-146.25" y="137.0" />
+    </edge>
+    <edge source="java.rmi.server.UnicastRemoteObject" target="java.rmi.Remote">
+      <point x="-147.75" y="-126.0" />
+      <point x="1154.7857142857142" y="80.0" />
+      <point x="790.0388584359362" y="80.0" />
+      <point x="6.0" y="15.0" />
+    </edge>
+    <edge source="ObjectRegistry" target="ObjectRegistryInterface">
+      <point x="52.0" y="-38.0" />
+      <point x="310.5" y="1360.0" />
+      <point x="448.20496429976845" y="1360.0" />
+      <point x="-84.36363636363637" y="38.0" />
+    </edge>
+    <edge source="Reducer" target="ObjectRegistryInterface">
+      <point x="-136.4000000000001" y="-38.0" />
+      <point x="954.3526957890592" y="1270.0" />
+      <point x="595.8413279361321" y="1270.0" />
+      <point x="63.27272727272725" y="38.0" />
+    </edge>
+    <edge source="ResourceInfo" target="java.io.Serializable">
+      <point x="36.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Master" target="StorageInterface">
+      <point x="84.0" y="-27.0" />
+      <point x="828.0276957890593" y="1320.0" />
+      <point x="1357.341327936132" y="1320.0" />
+      <point x="-204.75" y="137.0" />
+    </edge>
+    <edge source="Storage" target="java.rmi.server.UnicastRemoteObject">
+      <point x="-93.59999999999991" y="-137.0" />
+      <point x="2094.5294231742273" y="1320.0" />
+      <point x="1817.591327936132" y="1320.0" />
+      <point x="1817.591327936132" y="806.0" />
+      <point x="1471.392857142857" y="806.0" />
+      <point x="168.8571428571429" y="126.0" />
+    </edge>
+    <edge source="Reducer" target="java.rmi.server.UnicastRemoteObject">
+      <point x="0.0" y="-38.0" />
+      <point x="1090.7526957890593" y="1300.0" />
+      <point x="1053.591327936132" y="1300.0" />
+      <point x="1053.591327936132" y="816.0" />
+      <point x="1302.5357142857142" y="816.0" />
+      <point x="0.0" y="126.0" />
+    </edge>
+    <edge source="RMIStorage" target="Master">
+      <point x="-56.25" y="-27.0" />
+      <point x="1996.1294231742272" y="1684.0" />
+      <point x="809.3610291223926" y="1684.0" />
+      <point x="65.33333333333326" y="27.0" />
+    </edge>
+    <edge source="MasterInterface" target="java.rmi.Remote">
+      <point x="0.0" y="-27.0" />
+      <point x="98.0" y="50.0" />
+      <point x="742.0388584359362" y="50.0" />
+      <point x="-42.0" y="15.0" />
+    </edge>
+    <edge source="RMIClient" target="RMIRegistry">
+      <point x="-28.125" y="-38.0" />
+      <point x="805.4246612694654" y="1838.0" />
+      <point x="258.5" y="1838.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="RMIClient" target="RMIStorage">
+      <point x="65.625" y="-38.0" />
+      <point x="899.1746612694654" y="1858.0" />
+      <point x="2052.379423174227" y="1858.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="MapperInterface" target="java.rmi.Remote">
+      <point x="0.0" y="-38.0" />
+      <point x="1186.091327936132" y="886.0" />
+      <point x="163.25" y="886.0" />
+      <point x="163.25" y="80.0" />
+      <point x="778.0388584359362" y="80.0" />
+      <point x="-6.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.3505572441742654" x="1211.5" y="977.0000000000001" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

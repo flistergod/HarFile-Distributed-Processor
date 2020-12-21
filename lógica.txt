@@ -1,0 +1,81 @@
+Projeto:
+O que está no trello:
+
+Requesitos funcionais:
+
+Criar uma app de processamento distribuido de dados
+
+O stor fornece um pedaço de código que processa dados de um ficheiro JSON
+
+Particionar os dados por várias rélplicas de um serviço que se encontram armazenadas em máquinas separadas
+Cada réplica faz o processemanto de uma parte dos dados,
+No final junta-se os dados processados e entrega-se ao cliente
+
+Serviços:
+
+Storage:
+ - para armazenar os dados iniciais que vão ser processados (gerados por mappers e reducers)
+ - Vai ter uma interface para comunicar com o cliente para que este submeta os dados a serem processados
+
+Master:
+ - entidade que recebe os pedidos do cliente e que atribui aos mappers os chunks de dados a serem processados
+ - coordenador/lider de todo o processo de execução. Pega nos dados a serem processados e distribui pelos vários mappers
+
+Mappers:
+ - entidades que fazem o pré-processamento dos dados que vão ser processados
+ - Criam as estruturas corretas / preparam os dados para serem processados
+
+Reducers:
+ -entidades que fazem o processamento concreto dos dados,  ou seja, o pedaço de código para processar, tem de estar em cada réplica
+que seja reducer.
+
+Requesito extra - O master tem de ser substituído se falhar (usar ping heart beat). Se falhar, voltar a criá-lo mas com os mesmos dados.
+
+
+Requesitos não funcionais:
+
+Os mappers e reduceres são monotorizados pelo master. Se um destes falhar, cria-se um novo, com os mesmo chunks de dados a processar
+
+
+Lógica percebida:
+
+O cliente submete o ficheiro no Storage.
+Diz qual a tarefa que quer fazer ao master
+O master cria os vários mappers e reducers (vamos criar 2 de cada)
+O mapper vai buscar dados ao storage. (temos de ver como vamos fazer, pegamos no csv e dividimos as rows pelo nº de mappers)
+ ou seja: guardamos o csv no storage numa lista de linhas (strings). Dividimos o csv por linhas e cada linha na lista.
+	  criamos um map static de listas de linhas. Em que cada elemento do map será (id, list) em que o id, será o id do mapper e a list
+	  será o conjunto de linhas a que este está responsável.
+
+Exemplo: temos um csv com 30 linhas. Um mapper pede o csv, verifica quantos mappers existem, verifica qual a sua posição.
+Se for o 1º, fica com as primeiras 15 linhas, se for o 2º, fica com as últimas 15 linhas.
+
+Como podemos fazer isto? podemos fazer com que o mapper possa pedir o nº de mappers ao master.
+Temos de ver se o csv, tem nº impar, para que as divisões não fiquem mal
+e sempre que o mapper for colocar o seu pedaço de linhas, colocaremos ordenadamente. 
+
+O mapper vai chamar um reducer que não esteja ocupado, ou seja:
+Na classe do reducer teremos  um valor boolean estático que se incia a false (boolean busy=false). 
+Sempre que este estiver a processar dados com o algoritmodo stor (vamos fazer isto num while), colocamos o busy=true;
+No gestor de réplicas, sempre que pedirem um reducer, vamos devolver um random (como nas fichas), mas tem de ter o valor busy=false, não
+pode estar ocupado. Quando o chama, o reducer vai buscar os dados a processar do mapper ao map na classe Storage, processa-os, e coloca-os
+ordenadamente noutra estrutura static na classe stogare (exemplo static Arraylist output).
+
+Quando devolvemos esse output ao cliente? Não sei... mas podemos no storage estar sempre a ver o tamanho do output, quando este tiver
+o mesmo tamanho que o csv inicialmente dado pelo cliente. É devolvido ao cliente pelo master.
+
+Quando criamos os reducers e os mappers no master. Teremos de criar uma thread que irá monotorizar os mappers e reducers.
+Quando um deles for abaixo, voltamos a criá-los.
+
+Criar uma interface para cada um dos serviços (master, mapper, reducer, storage, client)
+
+Ter uma main em todos para lançar o serviço
+
+
+
+
+
+
+
+
+
